@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.tallercmovil.ejercicio3.R
 import com.tallercmovil.ejercicio3.databinding.ActivityMainBinding
 import com.tallercmovil.ejercicio3.model.Product
 import com.tallercmovil.ejercicio3.model.ProductApi
@@ -59,8 +60,8 @@ class MainActivity : AppCompatActivity(),Adaptador.OnItemListener {
             }
 
             override fun onFailure(call: Call<List<Product>>, t: Throwable) {
-                Log.d(LOGTAG,"Error")
-                Toast.makeText(this@MainActivity,"No hay conexión", Toast.LENGTH_LONG).show()
+                Log.d(LOGTAG,getString(R.string.error))
+                Toast.makeText(this@MainActivity,getString(R.string.noConection), Toast.LENGTH_LONG).show()
                 binding.pbConexion.visibility = View.INVISIBLE
             }
 
